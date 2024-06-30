@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    scroll-behavior: smooth;
+}
+
+body, html {
+    background-color: #eee;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container > h2 {
+    margin-top: 16vh;
+    width: 100%;
+    border-bottom: 2px solid ;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    padding: 0;
+    border-bottom: 2px solid #ccc;
+}
+
+header ul {
+    margin-left: 74vh;
+}
+
+header li {
+    display: inline-flex;
+    list-style: none;
+    padding: 0 16px;
+}
+
+header li a {
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.logo {
+    margin: 16px 0;
+    border-radius: 72px;
+    background-color: cornflowerblue;
+    color: #fff;
+    padding: 16px;
+}
+
+/* Estilizando o main */
+
+.sobre {
+    display: flex;
+}
+
+.sobre h2 {
+    margin-top: 32px;
+    text-align: center;
+} 
+
+.container section, p {
+    padding-top: 32px;
+    align-items: center;
+}
+
+div > img {
+    margin-top: 32px;
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.sobre p {
+    display: block;
+    margin-left: 5vw;
+    width: 40vw;
+    font-size: larger;
+}
+
+/* Estilizando Produtos */ 
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1%;
+    
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 8vh;
+}
+
+.produto img {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.produto a {
+    margin: 8px 0;
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+}
+
+.produto h5 {
+    text-decoration: line-through;
+}
+
+.produto button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.produto button:hover {
+    background-color: #0056b3;
+}
+
+/* Menu hamburguer */
+
+.menu-hamburguer {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-hamburguer span {
+    width: 30px;
+    height: 3px;
+    background-color: cornflowerblue;
+}
+
+.menu-mobile {
+    display: none;
+    visibility: hidden;
+}
+
+/* Tornando Responsivo */
+
+@media screen and (max-width: 767px) {
+    .container {
+        max-width: 90%;
+    }
+
+    .logo {
+        margin: 16px 0;
+        border-radius: 58px;
+        background-color: cornflowerblue;
+        color: #fff;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .produtos {
+        display: block;
+    }
+
+    .produto, a {
+        display: block;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .produto img {
+        max-width: 100%;
+        width: 200px;
+        height: 200px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+    }
+    
+    .produto {
+        display: block;
+        margin: 8px 0;
+        text-decoration: none;
+        color: #000;
+        font-weight: 600;
+    }
+    
+    .produto h5 {
+        text-decoration: line-through;
+    }
+
+
+    /*
+        classe sobre
+    */
+
+    .sobre {
+        align-items: center;
+        display: grid;
+    }
+
+    .sobre p {
+        max-width: 100%;
+        width: 60vw;
+        text-align: center;
+        position: relative;
+        left: 10vw;
+    }
+
+    .sobre img {
+        position: relative;
+        max-width: 100%;
+    }
+
+    .menu-hamburguer {
+        display: flex; /* Mostre o menu hambúrguer em dispositivos móveis */
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu-mobile, a {
+        visibility: visible;
+        text-decoration: none;
+        list-style: none;
+        margin-top: 3vh;
+        padding: 8px 0;
+        font-weight: 600;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        width: 90%;
+    }
+
+    .container h2 {
+        margin-top: 8vh;
+    }
+
+    .container > h2 {
+        margin-top: 16vh;
+        width: 100%;
+        border-bottom: 2px solid ;
+    }
+    
+    header .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header ul {
+        margin-left: 8vh;
+    }
+    
+    header li {
+        display: inline-flex;
+        list-style: none;
+        padding: 0 16px;
+    }
+    
+    header li a {
+        text-decoration: none;
+        font-size: larger;
+        font-weight: 600;
+    }
+
+    .sobre p, h2{
+        align-items: center;
+        position: relative;
+        bottom: 3.5vh;
+    }
+
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre {
+        margin-bottom: 0;
+    }
+
+    .produto img {
+        width: 80%;
+    }
+
+}
